@@ -2,23 +2,8 @@
 A modern, responsive, and minimalistic task management web application built using **HTML**, **CSS**, and **JavaScript**.  
 Designed with a clean UI, dark mode, live search, filters, categories, priorities, and full data persistence using LocalStorage.
 
-This project was developed during a **6-week Web Development Internship** at *TechNova Software Solutions Pvt. Ltd.*
-
 ---
 
-## 📸 Preview (Screenshots)
-> *(Replace these with your actual screenshots)*
-
-### Light Mode  
-![Light Mode Screenshot](screenshots/light-mode.png)
-
-### Dark Mode  
-![Dark Mode Screenshot](screenshots/dark-mode.png)
-
-### Task List  
-![Task List](screenshots/task-list.png)
-
----
 
 ## 🚀 Features
 
