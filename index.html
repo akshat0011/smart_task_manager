@@ -1,30 +1,85 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SmartTask Manager</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>SmartTask Manager</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Optional: Font Awesome for icons -->
+  <script src="https://kit.fontawesome.com/your_kit_id.js" crossorigin="anonymous"></script>
+
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <main class="app">
+    <header class="app-header" role="banner">
+      <div class="title-group">
+        <h1 class="app-title">SmartTask Manager</h1>
+        <p class="app-sub">Fast • Minimal • Responsive</p>
+      </div>
 
-<div class="container">
+      <div class="header-controls">
+        <button id="themeToggle" aria-pressed="false" title="Toggle theme">🌙</button>
+      </div>
+    </header>
 
-    <h1>SmartTask Manager</h1>
+    <section class="card" aria-labelledby="addTaskHeading">
+      <h2 id="addTaskHeading" class="visually-hidden">Add new task</h2>
 
-    <div class="input-section">
-        <input type="text" id="taskInput" placeholder="Enter a task...">
-        <button onclick="addTask()">Add</button>
-    </div>
+      <form id="taskForm" class="task-form" autocomplete="off">
+        <div class="row">
+          <input id="taskInput" name="task" type="text" placeholder="Add a new task (e.g. Study for DSP)" aria-label="Task description" required>
+          <select id="categorySelect" aria-label="Category">
+            <option value="General">General</option>
+            <option value="Study">Study</option>
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+          </select>
+          <select id="prioritySelect" aria-label="Priority">
+            <option value="low">Low</option>
+            <option value="medium" selected>Medium</option>
+            <option value="high">High</option>
+          </select>
+          <button type="submit" class="btn-primary">Add</button>
+        </div>
 
-    <input type="text" id="searchInput" placeholder="Search tasks..." onkeyup="filterTasks()">
+        <div class="row small-row">
+          <input id="searchInput" type="search" placeholder="Search tasks..." aria-label="Search tasks">
+          <select id="filterStatus" aria-label="Filter by status">
+            <option value="all">All</option>
+            <option value="pending">Pending</option>
+            <option value="completed">Completed</option>
+          </select>
+          <select id="filterCategory" aria-label="Filter by category">
+            <option value="all">All categories</option>
+            <option value="General">General</option>
+            <option value="Study">Study</option>
+            <option value="Work">Work</option>
+            <option value="Personal">Personal</option>
+          </select>
+        </div>
+      </form>
 
-    <ul id="taskList"></ul>
+      <ul id="taskList" class="task-list" aria-live="polite"></ul>
 
-    <button id="modeToggle" onclick="toggleMode()">Toggle Dark Mode</button>
+      <footer class="card-footer">
+        <small id="taskCount">0 tasks</small>
+        <div class="footer-actions">
+          <button id="clearCompleted">Clear completed</button>
+          <button id="clearAll">Clear all</button>
+        </div>
+      </footer>
+    </section>
 
-</div>
+    <footer class="app-footer">
+      <small>Built by Akshat • TechNova Internship</small>
+      <a href="#" id="githubLink">View on GitHub</a>
+    </footer>
+  </main>
 
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>
